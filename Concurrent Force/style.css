@@ -1,0 +1,234 @@
+/* NAV */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-color: #2759ae;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 3%;
+  background-color: #2759ae;
+}
+
+.logo {
+  margin-right: auto;
+  color: white;
+  font-size: 50px;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #edf0f1;
+}
+
+.cta {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: #2759ae;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: #2759ae;
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #2759ae;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #2759ae;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+
+/* Main */
+.chap-name{
+  color: white;
+}
+
+
+.definition{
+  color: black;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.calculate {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 150px;
+  height: auto;
+  font-weight: 700;
+}
+
+
+.two {
+  display: flex;
+  justify-content: center;
+}
+
+.main-2 {
+  background-color: black;
+  color: white;
+}
+
+.two{
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.f_and_a{
+  margin: 5rem;
+}
+
+.calculate{
+  margin: 1rem;
+  height: 2.5rem;
+}
+
+input{
+  border-radius: 8px;
+  box-shadow: 4px 2px 20px 0px;
+  outline: none;
+  padding-left: 0.5rem;
+}
+
+label,small{
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.output,.force,.angle{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+@media only screen and (max-width:1000px) {
+
+  .main-3{
+    padding: 0;
+  }
+ 
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  lottie-player {
+    display: none;
+  }
+
+}
+
+
+/* NavBar */
+@media screen and (max-height: 450px) {
+
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  
+}
+
+@media only screen and (max-width: 800px) {
+
+  .nav__links,
+  .cta {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+}

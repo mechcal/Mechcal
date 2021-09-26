@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    height: 105vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #563da7;
+}
+
+h1{
+    font-size: 90px;
+    color: #bfddf5;
+    font-weight: 800;
+    text-align: center;
+    background-color: #563da7;
+}
+
+.choice{
+    margin: 5rem;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+.choice a{
+    text-decoration: none;
+    list-style:inside;
+}
+
+.choice a li{
+    font-size: 35px;
+    line-height: 100px;
+    color: #bfddf5;
+    text-decoration: none;
+}
+
+lottie-player{
+    width: 650px;
+}
+
+footer{
+    background-color: black;
+}
+
+.footer span a{
+    font-style: normal;
+    text-decoration: none;
+    color: blue;
+} 
+
+h2{
+    color: aqua;
+    text-align: center;
+    color: white;
+}
+
+.college_name{
+    color: blue;
+}
+
+h3{
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media screen and (max-width:1000px) {
+
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+    lottie-player{
+        width: 400px;
+    }
+
+    .choice a li{
+        font-size: 25px;
+        line-height: 100px;
+        color: #bfddf5;
+        text-decoration: none;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+    lottie-player{
+        width: 250px;
+    }
+
+    .choice a li{
+        font-size: 15px;
+        line-height: 100px;
+        color: #bfddf5;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #2d62be;
+}
+
+/* Header */
+
+
+
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 3%;
+    background-color: #2d62be;
+}
+
+.logo {
+    margin-right: auto;
+    color: white;
+    font-size: 50px;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav__links li {
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #ffffff;
+}
+
+.cta {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: #2d62be;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+    background-color: #2d62be;
+}
+
+/* Mobile Nav */
+
+.menu {
+    display: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #2d62be;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+    width: 100%;
+}
+
+.overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #ffffff;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+    }
+
+    .overlay .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .nav__links,
+    .cta {
+        display: none;
+    }
+
+    .menu {
+        display: initial;
+    }
+}
+
+/* Main Content */
+
+.def{
+    color: black;
+    font-size: 1.3rem;
+}
+
+.animation-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theory{
+    background-color: black;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.name{
+    font-size: 3.5rem;
+    color: white;
+}
+
+.solve{
+    text-align: center;
+}
+
+input{
+    box-shadow: 0px 0px 20px 0px;
+}
+
+.theory h1{
+    color: white;
+}
+
+/* input {
+  border-radius: 40px;
+  border: 3px solid #cfcdd0;
+  box-shadow: 2px 3px 10px #888888;
+  padding-left: 10px;
+}
+
+textarea{
+  margin-left: 5%;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+} */
+
+
+.section{
+    margin-top: 5rem;
+}
+
+/* Button */
+
+.btn {
+    margin: auto;
+    display: flex;
+    margin-left: 45%;
+    width: 10%;
+}
+
+.table {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    font-weight: 600;
+    text-align: center;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+table,td{
+    border: 3px solid rgb(187, 187, 187);
+}
+
+td,
+th {
+    padding: 6px;
+    border: 1px solid rgb(100, 100, 100);
+    text-align: left;
+}
+
+.heading {
+    font-size: 40px;
+    margin-left: 5%;
+}
+
+.rules {
+    padding-left: 5%;
+}
+
+
+/* Button Style */
+
+.theory {
+    width: 100%;
+}
+
+.theory h2 {
+    font-size: 26px;
+    margin-left: 5%;
+    margin-top: 9%;
+}
+
+.theory h5 {
+    font-size: 18px;
+    margin-left: 5%;
+    padding-top: 1%;
+    font-weight: 500;
+}
+
+.theory p {
+    font-size: 19px;
+    margin-left: 5%;
+    padding-top: 1%;
+    font-weight: 500;
+    line-height: 3rem;
+}
+
+.chap_name {
+    color: black;
+    font-size: 70px;
+    font-weight: 600;
+    margin-left: 5%;
+}
+
+.definition {
+    color: black;
+    font-size: 20px;
+    font-weight: 400px;
+    margin-left: 5%;
+}
+
+.theory_table {
+    width: 60%;
+    margin-left: 9%;
+}
+
+.main_content {
+    margin-top: 9%;
+}
+
+
+p{
+    color: white;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+
+    tr {
+        background-color: #4287ff;
+    }
+
+    input:focus {
+        border: 2px solid rgb(255, 218, 7);
+    }
+
+    .btn {
+        margin: auto;
+        display: flex;
+        margin-left: 28%;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .erase {
+        visibility: visible;
+    }
+}
+
+
+.table_3{
+    margin-left: auto;
+    margin-right: auto;
+}

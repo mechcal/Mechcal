@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="SSB.css">
+    <title>SS Beam</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">MechCal</h1>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">Discover</a></li>
+                <li><a href="../About_Us/index.html">About Us</a></li>
+            </ul>
+        </nav>
+        <p class="menu cta"><i class="fas fa-bars fa-2x"></i></p>
+    </header>
+    <div id="mobile__menu" class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="../index.html">Home</a>
+            <a href="../index.html">Discover</a>
+            <a href="../About_Us/index.html">About Us</a>
+        </div>
+    </div>
+
+
+
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_ADqq0Z.json" background="transparent" speed="1"
+        style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+
+    <section class="body-font">
+
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+                src="https://i0.wp.com/18.221.143.46/wp-content/uploads/2020/03/Simply-2BSupported-2BBeam-2Bcopy1-2.jpg">
+            <div class=" chap-info text-center lg:w-2/3 w-full">
+                <h1 class=" chap-name title-font sm:text-4xl text-3xl mb-4 font-medium ">Simply Supported Beam</h1>
+                <p class=" def-chap mb-8 leading-relaxed">A simply supported beam is simply supported by the supports
+                    and is stable in nature. The only way in which you can support a fully stable beam without any
+                    degree of indeterminacy is to have a pin-joint at one support and a roller at the other support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="calcu-section">
+
+        <div class="main-section">
+            <div class="section-2-position">
+                <div class="left-2">
+                    <div class="image1" id="image1">
+                        <img class="image1" src="./Images/Pic-5.png" id="image2">
+                    </div>
+                </div>
+                <div class="right-2">
+                    <!-- <div class="dropdown">
+                    <button class="dropbtn">A</button>
+                    <div class="dropdown-content">
+                        <a href="#">Hinge Support</a>
+                        <a href="#">Roller Support</a>
+                        <a href="#">Fixed Support</a>
+                    </div>
+                </div>
+            
+                <div class="dropdown">
+                    <button class="dropbtn">B</button>
+                    <div class="dropdown-content">
+                        <a href="#">Hinge Support</a>
+                        <a href="#">Roller Support</a>
+                        <a href="#">Fixed Support</a>
+                    </div>
+                </div> -->
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Add Load</button>
+                        <div class="dropdown-content">
+                            <a href="#" onClick="changeImage()">Point Load</a>
+                            <a href="#" onClick="changeImage1()">UDL</a>
+                            <a href="#" onClick="changeImage2()">UVL</a>
+                        </div>
+                    </div>
+
+                    <button onclick="finalo(); final_out()" class="calulation-btn">Calculate</button>
+
+                    <!-- Point Load Input -->
+                    <div class="point">
+                        <small>length of beam = </small>
+                        <input class="in-btn" type="text" id="length1" /><br>
+                        <small>Forces = </small>
+                        <input class="in-btn" type="text" id="forces1" /> <br>
+                        <small>Angles = </small>
+                        <input class="in-btn" type="text" id="angles1" /><br>
+                        <small>Position = </small>
+                        <input class="in-btn" type="text" id="distance1" /> <br>
+                    </div>
+
+                    <!-- UDL Input -->
+                    <div class="udl">
+                        <small>length of beam = </small>
+                        <input class="in-btn" type="text" id="length2" /><br>
+                        <small>Forces = </small>
+                        <input class="in-btn" type="text" id="forces2" /> <br>
+                        <small>Angles= </small>
+                        <input class="in-btn" type="text" id="angles2" /> <br>
+                        <small>Position = </small>
+                        <input class="in-btn" type="text" id="position" /> <br>
+                        <small>Length of UDL = </small>
+                        <input class="in-btn" type="text" id="ludl" />
+                    </div>
+
+                    <!-- UVL Input -->
+                    <div class="uvl">
+                        <small>length of beam = </small>
+                        <input class="in-btn" type="text" id="length3" /><br>
+                        <small>Forces = </small>
+                        <input class="in-btn" type="text" id="forces3" /> <br>
+                        <small>Angles= </small>
+                        <input class="in-btn" type="text" id="angles3" /> <br>
+                        <small>Position = </small>
+                        <input class="in-btn" type="text" id="position1" /> <br>
+                        <small>Length of UVL = </small>
+                        <input class="in-btn" type="text" id="luvl" /><br>
+                        <small>Is the UVL force maximum at the starting point? (1 for true, -1 for false)= </small>
+                        <input class="in-btn" type="text" id="triangle" />
+                    </div>
+
+                    <!-- Point Load Output -->
+                    <div class="output1" id="output1">
+                        <button id="btn1" onclick="point()" class="result-btn">Result</button><br><br>
+                        <div class="output" id="output">
+                            <small>Reaction Forces(Vb) = </small><br>
+                            <input type="number " name=" " id="reaction1" disabled /><br />
+                            <small>Reaction Forces(Va) = </small><br>
+                            <input type="number " name=" " id="reaction2" disabled /><br />
+                            <small>Reaction Forces(Hb) = </small><br>
+                            <input type="number " name=" " id="reaction3" disabled /><br />
+                        </div>
+                    </div>
+
+                    <!-- UDL Output -->
+                    <div class="output2" id="output2">
+                        <button id="btn1" onclick="udl()" class="result-btn">Result</button><br><br>
+                        <div class="output" id="output">
+                            <small>Reaction Forces(Vb) = </small><br>
+                            <input type="text" name=" " id="reaction4" disabled /><br />
+                            <small>Reaction Forces(Va) = </small><br>
+                            <input type="text" name=" " id="reaction5" disabled /><br />
+                            <small>Reaction Forces(Hb) = </small><br>
+                            <input type="text" name=" " id="reaction6" disabled /><br />
+                        </div>
+                    </div>
+
+                    <!-- UVL Output -->
+                    <div class="output3" id="output3">
+                        <button id="btn1" onclick="uvl()" class="result-btn">Result</button><br><br>
+                        <div class="output" id="output">
+                            <small>Reaction Forces(Vb) = </small><br>
+                            <input type="text" name=" " id="reaction7" disabled /><br />
+                            <small>Reaction Forces(Va) = </small><br>
+                            <input type="text" name=" " id="reaction8" disabled /><br />
+                            <small>Reaction Forces(Hb) = </small><br>
+                            <input type="text" name=" " id="reaction9" disabled /><br />
+                        </div>
+                    </div>
+
+                    <!-- Final Output -->
+                    <div class="output4" id="output4">
+                        <div class="output" id="output">
+                            <small>Reaction Forces(Vb) = </small><br>
+                            <input type="text" name=" " id="finalvb" disabled /><br />
+                            <small>Reaction Forces(Va) = </small><br>
+                            <input type="text" name=" " id="finalva" disabled /><br />
+                            <small>Reaction Forces(Hb) = </small><br>
+                            <input type="text" name=" " id="finalhb" disabled /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: black;">
+        <div class="text" style="color: white;text-align: center;font-size: 1.5rem;">
+            © 2021 Copyright:
+            <a class="college-link" href="https://vit.edu.in/" style="color: blue;">Vidyalankar institute of
+                technolgy</a>
+        </div>
+    </footer>
+
+
+    <script>
+        // Point Load 
+        function point() {
+            var forces = document.getElementById("forces1").value;
+            var angles = document.getElementById("angles1").value;
+            var distance = document.getElementById("distance1").value;
+            var lvb = document.getElementById("length1").value;
+
+            var forceArray1 = forces.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var angleArray1 = angles.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var distanceArray1 = distance.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var size1 = forceArray1.length;
+            var Fx1 = 0;
+            var Fy1 = 0;
+            var vb1 = 0;
+            var va1 = 0;
+            var hb1 = 0;
+            var Moment1 = 0;
+
+            for (let i = 0; i < size1; i++) {
+                Fx1 += forceArray1[i] * Math.cos((angleArray1[i] * Math.PI) / 180);
+            }
+
+            for (let i = 0; i < size1; i++) {
+                Fy1 += forceArray1[i] * Math.sin((angleArray1[i] * Math.PI) / 180);
+            }
+
+            for (let i = 0; i < size1; i++) {
+                Moment1 += (forceArray1[i] * Math.sin((angleArray1[i] * Math.PI) / 180)) * distanceArray1[i];
+            }
+
+            vb1 = -(Moment1) / lvb;
+            va1 = Fy1 - (-vb1);
+            hb1 = Fx1;
+
+            document.getElementById("reaction1").value = vb1;
+            document.getElementById("reaction2").value = va1;
+            document.getElementById("reaction3").value = hb1;
+
+            return {
+                vb1,
+                va1,
+                hb1
+            };
+        }
+
+        // UDL Load
+        function udl() {
+            var forces2 = document.getElementById("forces2").value;
+            var position = document.getElementById("position").value;
+            var lvb2 = document.getElementById("length2").value;
+            var ludl = document.getElementById("ludl").value;
+            var angles2 = document.getElementById("angles2").value;
+
+            var forceArray2 = forces2.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var positionArray = position.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var ludlArray = ludl.split(",").map(function (el) {
+                return parseFloat(el);
+
+            });
+
+            var angleArray2 = angles2.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var size2 = forceArray2.length;
+            var to_point = new Array();
+            var Fx2 = 0;
+            var Fy2 = 0;
+            var vb2 = 0;
+            var va2 = 0;
+            var hb2 = 0;
+            var Moment2 = 0;
+
+            // for (i = 0; i < size; i++) {
+            //     Fx += forceArray[i] * Math.cos((angleArray[i] * Math.PI) / 180);
+            // }
+
+            for (i = 0; i < size2; i++) {
+                Fy2 += forceArray2[i] * Math.sin((angleArray2[i] * Math.PI) / 180) * (ludlArray[i]);
+            }
+
+            for (i = 0; i < size2; i++) {
+                // Fy = forceArray[i] * Math.sin((angleArray[i] * Math.PI) / 180);
+                to_point[i] = forceArray2[i] * ludlArray[i];
+            }
+
+            for (i = 0; i < size2; i++) {
+                Moment2 += (to_point[i]) * (positionArray[i] + (ludlArray[i] / 2));
+                parseFloat(Moment2);
+            }
+
+            console.log(Moment2);
+            console.log(Fy2);
+            vb2 = (Moment2) / lvb2;
+            va2 = Fy2 - vb2;
+            // hb = 0;
+
+            document.getElementById("reaction4").value = vb2;
+            document.getElementById("reaction5").value = va2;
+            document.getElementById("reaction6").value = hb2;
+
+            return {
+                vb2,
+                va2,
+                hb2
+            };
+        }
+
+        // UVL load
+        function uvl() {
+            var forces3 = document.getElementById("forces3").value;
+            var position1 = document.getElementById("position1").value;
+            var lvb1 = document.getElementById("length3").value;
+            var luvl = document.getElementById("luvl").value;
+            var angles3 = document.getElementById("angles3").value;
+            var triangle = document.getElementById("triangle").value;
+
+
+            var forceArray3 = forces3.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var positionArray1 = position1.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var luvlArray = luvl.split(",").map(function (el) {
+                return parseFloat(el);
+
+            });
+            var triangle = triangle.split(",").map(function (el) {
+                return parseFloat(el);
+
+            });
+
+            var angleArray3 = angles3.split(",").map(function (el) {
+                return parseFloat(el);
+            });
+
+            var size3 = forceArray3.length;
+            var to_point1 = new Array();
+            var Fx3 = 0;
+            var Fy3 = 0;
+            var vb3 = 0;
+            var va3 = 0;
+            var hb3 = 0;
+            var Moment3 = 0;
+
+            // for (i = 0; i < size; i++) {
+            //     Fx += forceArray[i] * Math.cos((angleArray[i] * Math.PI) / 180);
+            // }
+
+            for (i = 0; i < size3; i++) {
+                Fy3 += forceArray3[i] * Math.sin((angleArray3[i] * Math.PI) / 180) * (luvlArray[i] / 2);
+            }
+
+            for (i = 0; i < size3; i++) {
+                // Fy = forceArray[i] * Math.sin((angleArray[i] * Math.PI) / 180);
+                to_point1[i] = (forceArray3[i] * luvlArray[i]) / 2;
+            }
+
+            for (i = 0; i < size3; i++) {
+                if (triangle[i] == 1) {
+                    Moment3 += (to_point1[i]) * (positionArray1[i] + (luvlArray[i] / 3));
+                    parseFloat(Moment3);
+                } else if (triangle[i] == -1) {
+                    Moment3 += (to_point1[i]) * (positionArray1[i] + ((2 * luvlArray[i]) / 3));
+                    parseFloat(Moment3);
+                } else {
+                    window.alert("invalid input");
+                }
+            }
+
+            console.log(Moment3);
+            console.log(Fy3);
+            vb3 = (Moment3) / lvb1;
+            va3 = Fy3 - vb3;
+            // hb = 0;
+
+            document.getElementById("reaction7").value = vb3;
+            document.getElementById("reaction8").value = va3;
+            document.getElementById("reaction9").value = hb3;
+
+            return {
+                vb3,
+                va3,
+                hb3
+            };
+        }
+
+        function final_out() {
+            var vb1;
+            var va1;
+            var hb1;
+            var vb2;
+            var va2;
+            var hb2;
+            var vb3;
+            var va3;
+            var hb3;
+
+            var {
+                vb1,
+                va1,
+                hb1
+            } = point();
+            var {
+                vb2,
+                va2,
+                hb2
+            } = udl();
+            var {
+                vb3,
+                va3,
+                hb3
+            } = uvl();
+
+            var finalvb = vb1 + vb2 + vb3;
+            var finalva = va1 + va2 + va3;
+            var finalhb = hb1 + hb2 + hb3;
+
+            console.log(finalhb);
+            console.log(finalva);
+            console.log(finalvb);
+
+            document.getElementById("finalvb").value = finalvb;
+            document.getElementById("finalva").value = finalva;
+            document.getElementById("finalhb").value = finalhb;
+
+        }
+    </script>
+
+    <script>
+        function changeImage() {
+            document.getElementById('image2').src = "./Images/pic-1.png"
+            //inputs
+            document.querySelector('.point').style.display = 'block';
+            document.querySelector('.udl').style.display = 'none';
+            document.querySelector('.uvl').style.display = 'none';
+
+            //outputs
+            document.querySelector('.output1').style.display = 'block';
+            document.querySelector('.output2').style.display = 'none';
+            document.querySelector('.output3').style.display = 'none';
+            document.querySelector('.output4').style.display = 'none';
+        }
+
+        function changeImage1() {
+            //inputs
+            document.getElementById('image2').src = "./Images/pic-3.png"
+            document.querySelector('.point').style.display = 'none';
+            document.querySelector('.udl').style.display = 'block';
+            document.querySelector('.uvl').style.display = 'none';
+
+            //outputs
+            document.querySelector('.output1').style.display = 'none';
+            document.querySelector('.output2').style.display = 'block';
+            document.querySelector('.output3').style.display = 'none';
+            document.querySelector('.output4').style.display = 'none';
+        }
+
+        function changeImage2() {
+            //inputs
+            document.getElementById('image2').src = "./Images/pic-2.png"
+            document.querySelector('.point').style.display = 'none';
+            document.querySelector('.udl').style.display = 'none';
+            document.querySelector('.uvl').style.display = 'block';
+
+            //outputs
+            document.querySelector('.output1').style.display = 'none';
+            document.querySelector('.output2').style.display = 'none';
+            document.querySelector('.output3').style.display = 'block';
+            document.querySelector('.output4').style.display = 'none';
+        }
+
+        function finalo() {
+            //inputs
+            document.querySelector('.point').style.display = 'none';
+            document.querySelector('.udl').style.display = 'none';
+            document.querySelector('.uvl').style.display = 'none';
+
+            //outputs
+            document.querySelector('.output1').style.display = 'none';
+            document.querySelector('.output2').style.display = 'none';
+            document.querySelector('.output3').style.display = 'none';
+            document.querySelector('.output4').style.display = 'block';
+        }
+    </script>
+
+    <script>
+        const doc = document;
+        const menuOpen = doc.querySelector(".menu");
+        const menuClose = doc.querySelector(".close");
+        const overlay = doc.querySelector(".overlay");
+
+        menuOpen.addEventListener("click", () => {
+            overlay.classList.add("overlay--active");
+        });
+
+        menuClose.addEventListener("click", () => {
+            overlay.classList.remove("overlay--active");
+        });
+    </script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>
